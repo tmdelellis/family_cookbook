@@ -1,16 +1,16 @@
 %%-The Recipe Book
-
 \documentclass[12pt]{book}
 %\usepackage{picmacs}
 \usepackage{makeidx}
 \usepackage{wrapfig}
 \usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{xfrac}
+\usepackage[detect-all, binary-units]{siunitx}
+\usepackage{hyperref}
 
-\setlength{\oddsidemargin}{0.5in}
-\setlength{\evensidemargin}{0.0in}
-\setlength{\textheight}{8.5in}
-\setlength{\textwidth}{6.0in}
-\setlength{\topmargin}{0.0in}
+%% >>> STYLE DEFINITIONS
+
 \makeindex 
 
 \newcommand{\name}[1]{\textit{#1}}
@@ -21,18 +21,51 @@
 \newenvironment{ingredients}{\begin{list}{}{\setlength{\listparindent}{0pt}}
 \item\bf}{\end{list}}
 
+\sisetup{range-phrase = \text{--},
+  group-separator={\,},
+  per-mode=reciprocal,
+  group-minimum-digits=3,
+  inter-unit-product = \ensuremath{{}\cdot{}},
+  range-units=single,
+  quotient-mode=fraction,
+  product-units=single,
+  fraction-function=\sfrac}
+\DeclareSIUnit\tblspoon{Tbsp}
+\DeclareSIUnit\teaspoon{tsp}
+\DeclareSIUnit\cup{C}
+\DeclareSIUnit\pound{lb}
+\DeclareSIUnit\ounce{oz}
+\DeclareSIUnit\pint{pt}
+\DeclareSIUnit\quart{qt}
+\DeclareSIUnit\inch{inch}
+
+\hypersetup{
+    linkcolor=[rgb]{0.18,0.31,0.31},
+    %linkcolor=[rgb]{0.28235294, 0.23921569, 0.54509804},
+    %linkcolor=[rgb]{0.43921569, 0.50196078, 0.56470588},
+    citecolor=[rgb]{0.780,0.647,0.258},
+    urlcolor=[rgb]{0.325,0.494,0.658},
+    colorlinks=true
+}
+
+%% >>> DOCUMENT
+
 \begin{document}
 
+%% >>> FRONT MATTER
+
 \frontmatter
+
+%% Title page
 \begin{titlepage}
 \vspace*{1.5in}
 \begin{center}
 \begin{LARGE}
-Tom and Kate Present\\
+Tom, Kate, and Maddie Present\\
 \end{LARGE}
 \begin{huge}
 \vspace{2\baselineskip}
-{\bf The Really Cool}\\
+{\bf The Really$\mathbf{\times 2}$ Cool}\\
 \end{huge}
 \begin{Huge}
 \vspace{2\baselineskip}
@@ -40,32 +73,34 @@ Tom and Kate Present\\
 \end{Huge}
 \begin{LARGE}
 \vspace{3\baselineskip}
-First Edition
+Second Edition! 
 \end{LARGE}
 \end{center}
 \end{titlepage}
 
+%% Copyright page
 \vspace*{\fill}
-Copyright\,\copyright\, 1996 Tom and Kate Publishing People, Inc.
+Copyright\,\copyright\, 1996, 2020 Tom and Kate Publishing People, Inc.
 This document was prepared using the \LaTeX\ typesetting language.
-Edited and compiled by Tom and Kate Evans.  Tom and Kate Publishing
+Edited and compiled by Tom, Kate, and Madeleine Evans.  Tom and Kate Publishing
 People, Inc.
-Printed on 12-20-96.  Recipes  received between 9-95 and
+First Edition printed on 12-20-96.  Recipes  received between 9-95 and
 12-96.
+Second Edition released 2020.
 May not be reprinted without permission (just kidding!).  
 
 \vspace{1\baselineskip}
-We are not
-responsible for any bad recipes!!!  Send any corrections to Tom and
-Kate, 3515 Pleasantdale Rd, Apt 332, Doraville, GA  30340.
-%\vspace*{\fill}
+We are not responsible for any bad recipes!!!  Send any corrections to Tom, Kate, 11112 Windward Dr, Knoxville, TN 37934 or email \href{mailto:ktloo@tds.net}{ktloo@tds.net}.
 \pagebreak
 
+%% TOC
 \pagestyle{headings}
 \tableofcontents
 
-\chapter{Foreward}
+%% Forward
+\chapter{Foreword}
 
+{\color{red}
 Finally, we know all of you have been holding your breath this last year
 in anticipation of the release of the Family Cookbook.  Well Ma'
 Flanders, you can rest at ease, because IT is here.  We hope everyone
@@ -76,7 +111,7 @@ very happy with the results.
 
 Now that we have a `base' manuscript from which to work, inclusions will
 be welcome.  We foresee that many editions of the family cookbook could
-grace the bookshelfs, cabinets, and, in some cases, trash cans of our
+grace the bookshelves, cabinets, and, in some cases, trash cans of our
 once and future homes.  Keep the recipes and corrections comin' and we'll
 eventually work them in two the second edition due out in April, 2034.
 
@@ -84,7 +119,7 @@ Illustrations in the cookbook are meant to spice things up. Both Kate and
 Tom contributed artwork.  We hope you think that they are moderately
 funny.  In the future any contributions in this area are welcome.  Some
 of you may be wondering, `Why no pictures?'  Well, we felt that the realm
-of photography was frought with far too much peril.  What if we forgot a
+of photography was fraught with far too much peril.  What if we forgot a
 picture of so-and-so or `That's a horrible picture of me to present to
 the whole family!'  Frankly, we didn't want to deal with the possibility
 of such horrors, so, artwork it was.
@@ -94,57 +129,63 @@ have no energy left to write, format, or look at this in general.  Please
 try the recipes and let us and others know which are keepers (hopefully
 all) and which need modification.  May all enjoy and we look forward to
 hearing from all of you  in the near future!  Happy Holidays!
+}
 
 \vspace{.5in}
 \begin{flushright}
-Tom and Kate Evans\\ Atlanta 1996
+Tom, Kate, and Maddie Evans\\ Knoxville 2020
 \end{flushright}
+
+%% >>> MAIN DOCUMENT
 
 \mainmatter
 
-\input{salad}
-\input{breads}
-\input{sides}
-\input{main}
-\input{treats}
+\part{Recipes from the Second Edition}
+\input{second-salads}
+\input{second-breads}
+\input{second-sides}
+\input{second-main}
+\input{second-treats}
 
-\backmatter
+\part{Recipes from the First Edition}
+\input{first-salads}
+\input{first-breads}
+\input{first-sides}
+\input{first-main}
+\input{first-treats}
 
+\appendix
 \chapter{Family Information}
 
 \section{List of Contributors}
 
 \begin{enumerate}
+ \color{red}
+ \itemsep0pt
+ \parskip1pt
 \item Betsy and Rich Cordova, \textit{411 Arrowhead Trail, Sinking Spring
-PA  19608}.  Rich is in med. school so they're on the move.  This is the
-easiest place to find out where they are.
-\item Angelo and Evelina DeLellis, \textit{238 Faust Road,
-Sinking Spring, PA 19608}.
-\item George, Sr. and Mickey Evans, \textit{1822 Village Lane,
-Bentley Village, Naples FL, 33963}.
-\item Fermina, Geo, and Kate Evans, \textit{411 Arrowhead Trail, 
+PA  19608}.
+\item Angelo and Evelina DeLellis
+\item George, Sr. and Mickey Evans
+\item Fermina and George Evans, \textit{411 Arrowhead Trail, 
 Sinking Spring PA, 19608.}
-\item Steve, Joyce, and Scott Evans, \textit{c/o Steve Evans, 1890 Madison
- Ave., Cincinnati, OH 45206.} Scott is actually in school at Ohio State.
-\item Tom and Kate Evans, \textit{3515 Pleasantdale Rd. 332, 
-Atlanta GA, 30340.}
-\item Amy and Ed Gormley, Lauren Anton, \textit{5 Knollwood Drive,
-Sinking Spring, PA 19608}.
+\item Katie Evans
+\item Steve and Joyce Evans
+\item Scott Evans
+\item Tom and Kate Evans, \textit{11112 Windward Dr, Knoxville, TN 37934}.
+\item Amelia DeLellis
+\item Lauren Anton
 \item Paul and Mimi Horne, \textit{28 ave. R Poincar\'{e}, 75116
 Paris, France}.
-\item Rich, Jen, Julian, and Nicholas King, \textit{Margrietlaan 15,
-6165 Cr Geleen, The Netherlands}.
-\item Don and Lil Johnson, \textit{115 Norris Road,
-Wilmington, DE 19883.}
-\item Donald Johnson, III, \textit{121 Warwick Street SE 1, 
-Minneapolis, MN 55455}.  Make sure you add the
-III behind Don's name, he loves that.
-\item David Lindquist and Jen Tidy, \textit{236 South Prosect Street 1,
-Burlington, VT  05401}.
+\item Rich, Jenn, Julian, and Nicholas King.
+\item Don and Lil Johnson
+\item Donald and Geyi Johnson
+\item David Lindquist and Dottie Calvano (Lindquist?)
 \end{enumerate}
 
 \section{Family Trees}
 
+{\color{red}
 We realized while writing this recipe book that many of you don't know
 people from either Tom's or Kate's extended families.  To resolve this
 Tom proposed a biblical-style section, ie. Donald begot Dodge who was the
@@ -154,15 +195,26 @@ remind Tom of Feynman Diagrams and because Kate thinks they look like
 something having to do with weather.  Anyway, these are meant for people
 from one side of the hill to see who is related to who on the other side.
 They are not conclusive and only reflect the situation as it is now.
-\vspace*{\fill}
-\pagebreak
-\begin{center}
-\includegraphics[angle=90,height=8.5in,clip]{ktree.eps}
-\end{center}
-\pagebreak
-\centerline{
-\includegraphics[angle=90,height=8.5in,clip]{ttree.eps}}
+}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=.9\textwidth,clip]{figures/Johnson-Tree}
+    \caption{Johnson Family Tree.}
+    \label{fig:johnson-tree}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.9\textwidth,clip]{figures/DeLellis-Tree}
+    \caption{DeLellis Family Tree.}
+    \label{fig:delellis-tree}
+\end{figure}
+
+%% >>> BACKMATTER
+
+\backmatter
 \printindex
+
 \end{document}
 
