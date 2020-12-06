@@ -8,10 +8,11 @@
 \usepackage{xfrac}
 \usepackage[detect-all, binary-units]{siunitx}
 \usepackage{hyperref}
+\usepackage{tocloft}
 
 %% >>> STYLE DEFINITIONS
 
-\makeindex 
+\makeindex
 
 \newcommand{\name}[1]{\textit{#1}}
 \newcommand{\corp}[1]{\textsf{#1}}
@@ -48,6 +49,10 @@
     colorlinks=true
 }
 
+%% >>> TOC settings
+
+\cftsetindents{section}{1.5em}{3em}
+
 %% >>> DOCUMENT
 
 \begin{document}
@@ -73,7 +78,7 @@ Tom, Kate, and Maddie Present\\
 \end{Huge}
 \begin{LARGE}
 \vspace{3\baselineskip}
-Second Edition! 
+Second Edition!
 \end{LARGE}
 \end{center}
 \end{titlepage}
@@ -87,7 +92,7 @@ People, Inc.
 First Edition printed on 12-20-96.  Recipes  received between 9-95 and
 12-96.
 Second Edition released 2020.
-May not be reprinted without permission (just kidding!).  
+May not be reprinted without permission (just kidding!).
 
 \vspace{1\baselineskip}
 We are not responsible for any bad recipes!!!  Send any corrections to Tom, Kate, 11112 Windward Dr, Knoxville, TN 37934 or email \href{mailto:ktloo@tds.net}{ktloo@tds.net}.
@@ -107,7 +112,7 @@ Flanders, you can rest at ease, because IT is here.  We hope everyone
 enjoys each others contributions.  Kate and Tom had a good time putting it
 together, well that isn't entirely true.  Let's say we enjoyed the
 THOUGHT of doing it, and, of course, now that the deed is done we are
-very happy with the results.  
+very happy with the results.
 
 Now that we have a `base' manuscript from which to work, inclusions will
 be welcome.  We foresee that many editions of the family cookbook could
@@ -167,7 +172,7 @@ Tom, Kate, and Maddie Evans\\ Knoxville 2020
 PA  19608}.
 \item Angelo and Evelina DeLellis
 \item George, Sr. and Mickey Evans
-\item Fermina and George Evans, \textit{411 Arrowhead Trail, 
+\item Fermina and George Evans, \textit{411 Arrowhead Trail,
 Sinking Spring PA, 19608.}
 \item Katie Evans
 \item Steve and Joyce Evans
