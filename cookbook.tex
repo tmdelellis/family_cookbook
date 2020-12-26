@@ -9,6 +9,7 @@
 \usepackage[detect-all, binary-units]{siunitx}
 \usepackage{hyperref}
 \usepackage{tocloft}
+\usepackage{subcaption}
 
 %% >>> STYLE DEFINITIONS
 
@@ -37,6 +38,11 @@
     {
     }
 
+% Minisections
+\newcommand{\minisection}[1]{\vspace{0.5\baselineskip}%
+    \noindent\underline{#1}%
+    \vspace{0.5\baselineskip}\noindent}
+
 \sisetup{range-phrase = \text{--},
   group-separator={\,},
   per-mode=reciprocal,
@@ -44,7 +50,7 @@
   inter-unit-product = \ensuremath{{}\cdot{}},
   range-units=single,
   quotient-mode=fraction,
-  product-units=single,
+  product-units=repeat,
   fraction-function=\sfrac}
 \DeclareSIUnit\tblspoon{Tbsp}
 \DeclareSIUnit\teaspoon{tsp}
@@ -53,7 +59,8 @@
 \DeclareSIUnit\ounce{oz}
 \DeclareSIUnit\pint{pt}
 \DeclareSIUnit\quart{qt}
-\DeclareSIUnit\inch{inch}
+\DeclareSIUnit\inch{$''$}
+\DeclareSIUnit\degreeF{\degree F}
 
 \hypersetup{
     linkcolor=[rgb]{0.18,0.31,0.31},
