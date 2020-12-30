@@ -1,4 +1,6 @@
-%%-The Recipe Book
+%%---------------------------------------------------------------------------%%
+%% The Recipe Book
+%%---------------------------------------------------------------------------%%
 \documentclass[12pt]{article}
 \usepackage{makeidx}
 \usepackage{wrapfig}
@@ -8,13 +10,16 @@
 \usepackage{hyperref}
 \usepackage{tocloft}
 \usepackage{xspace}
-\usepackage{titlesec}
 \usepackage{color}
+\usepackage{titlesec}
 
+%%---------------------------------------------------------------------------%%
 %% >>> STYLE DEFINITIONS
 
+%% Index
 \makeindex
 
+%% Commands
 \newcommand{\name}[1]{\textit{#1}}
 \newcommand{\corp}[1]{\textsf{#1}}
 \newcommand{\oven}[1]{#1$^{\circ}$}
@@ -25,9 +30,25 @@
 \newcommand{\sauteed}{saut\'{e}ed\xspace}
 \newcommand{\Saute}{Saut\'{e}\xspace}
 
-%% Sectioning
-%\titleformat{\section}{\bfseries\uppercase}{\thesection}{1em}{}
-%\titleformat{\section}{\Large\bfseries\uppercase}{\thesection}{1em}{}
+\newcommand{\secpart}[2]
+{
+    \clearpage
+    \thispagestyle{plain}
+    \phantom{x}
+    \vfill
+    {\noindent\Large#1}
+    \section{#2}
+    \vfill
+}
+
+\newcommand{\protip}[1]
+{
+    \begin{center}
+    \fbox{%
+        \parbox{0.9\textwidth}{{\bf Pro Tip}: #1}
+    }
+    \end{center}
+}
 
 %% Environments
 \newenvironment{ingredients}
@@ -55,30 +76,12 @@
 
 }
 
-\newcommand{\secpart}[2]
-{
-    \clearpage
-    \phantom{x}
-    \vfill
-    {\noindent\Large#1
-    \section{#2}}
-    \vfill
-}
-
-\newcommand{\protip}[1]
-{
-    \begin{center}
-    \fbox{%
-        \parbox{0.9\textwidth}{{\bf Pro Tip}: #1}
-    }
-    \end{center}
-}
-
 % Minisections
 \newcommand{\minisection}[1]{\vspace{0.5\baselineskip}%
     \noindent\underline{#1}%
     \vspace{0.5\baselineskip}\noindent}
 
+% Units setup
 \sisetup{range-phrase = \text{--},
   group-separator={\,},
   per-mode=reciprocal,
@@ -108,17 +111,11 @@
     colorlinks=true
 }
 
-%% >>> TOC settings
-
-%\cftsetindents{section}{1.5em}{3em}
-
-%% >>> DOCUMENT
-
+%%---------------------------------------------------------------------------%%
 \begin{document}
 
+%%---------------------------------------------------------------------------%%
 %% >>> FRONT MATTER
-
-%\frontmatter
 \titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}[]
 
 %% Title page
@@ -199,10 +196,14 @@ hearing from all of you  in the near future!  Happy Holidays!
 Tom and Kate Evans\\ Knoxville 2020
 \end{flushright}
 
+%%---------------------------------------------------------------------------%%
 %% >>> MAIN DOCUMENT
-
-%\mainmatter
-\titleformat{\section}{\Huge\bfseries\uppercase}{\thesection}{1em}{}[\titlerule]
+\titleformat{name=\section}%
+    {\Huge\bfseries\uppercase}%
+    {\thesection}%
+    {1em}%
+    {}%
+    [\titlerule]
 
 %\part{Recipes from the Second Edition}
 \input{second-salads}
@@ -219,11 +220,12 @@ Tom and Kate Evans\\ Knoxville 2020
 %\input{first-main}
 %\input{first-treats}
 
+%%---------------------------------------------------------------------------%%
+%% >>> APPENDIX
 \appendix
-
 \titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
-
 \newpage
+
 \section{Family Information}
 
 \subsection{List of Contributors}
@@ -258,21 +260,21 @@ They are not conclusive and only reflect the situation as it is now.
 
 \begin{figure}
     \centering
-    \includegraphics[width=.9\textwidth,clip]{figures/Johnson-Tree}
+    \includegraphics[width=.9\textwidth,clip]{figures/Johnson-Tree.pdf}
     \caption{Johnson Family Tree.}
     \label{fig:johnson-tree}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=.9\textwidth,clip]{figures/DeLellis-Tree}
+    \includegraphics[width=.9\textwidth,clip]{figures/DeLellis-Tree.pdf}
     \caption{DeLellis Family Tree.}
     \label{fig:delellis-tree}
 \end{figure}
 
+%%---------------------------------------------------------------------------%%
 %% >>> BACKMATTER
-
-%\backmatter
 \printindex
 
+%%---------------------------------------------------------------------------%%
 \end{document}
