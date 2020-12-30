@@ -3,7 +3,7 @@ ebook := tex4ebook
 .PHONY: clean
 
 cookbook.epub: cookbook.tex
-	$(ebook) -c econfig.cfg cookbook.tex
+	$(ebook) --shell-escape -c econfig.cfg cookbook.tex
 
 clean:
 	rm -f content.opf

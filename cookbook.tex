@@ -12,6 +12,7 @@
 \usepackage{xspace}
 \usepackage{color}
 \usepackage{titlesec}
+\usepackage[breakable,many,minted]{tcolorbox}
 
 %%---------------------------------------------------------------------------%%
 %% >>> STYLE DEFINITIONS
@@ -30,24 +31,65 @@
 \newcommand{\sauteed}{saut\'{e}ed\xspace}
 \newcommand{\Saute}{Saut\'{e}\xspace}
 
+%\newcommand{\secpart}[2]
+%{
+%    \clearpage
+%    %%
+%    \titleformat{name=\section}%
+%    {\Huge\bfseries\uppercase}%
+%    {\thesection}%
+%    {1em}%
+%    {}%
+%    [\titlerule]
+%    %%
+%    \thispagestyle{plain}
+%    \phantom{x}
+%    \vfill
+%    {\noindent\Large#1}
+%    \section{#2}
+%    \vfill
+%}
+
 \newcommand{\secpart}[2]
 {
     \clearpage
+    %%
+    \titleformat{name=\section}%
+        {\Huge\bfseries\uppercase}%
+        {\thesection}%
+        {1em}%
+        {}%
+        [\vspace{-0.5\baselineskip}]
+    %%
     \thispagestyle{plain}
     \phantom{x}
     \vfill
-    {\noindent\Large#1}
-    \section{#2}
+    \begin{tcolorbox}%
+        {\noindent\Large#1}
+        \section{#2}
+    \end{tcolorbox}
     \vfill
 }
 
+%\newcommand{\protip}[1]
+%{
+%    \begin{center}
+%    \fbox{%
+%        \parbox{0.9\textwidth}{{\bf Pro Tip}: #1}
+%    }
+%    \end{center}
+%}
+
 \newcommand{\protip}[1]
 {
-    \begin{center}
-    \fbox{%
-        \parbox{0.9\textwidth}{{\bf Pro Tip}: #1}
-    }
-    \end{center}
+    \begin{tcolorbox}%
+        [title=Pro Tip,%
+        center title,%
+        width=0.8\textwidth,%
+        beforeafter skip=1\baselineskip,%
+        center]
+        #1
+    \end{tcolorbox}
 }
 
 %% Environments
@@ -198,12 +240,6 @@ Tom and Kate Evans\\ Knoxville 2020
 
 %%---------------------------------------------------------------------------%%
 %% >>> MAIN DOCUMENT
-\titleformat{name=\section}%
-    {\Huge\bfseries\uppercase}%
-    {\thesection}%
-    {1em}%
-    {}%
-    [\titlerule]
 
 %\part{Recipes from the Second Edition}
 \input{second-salads}
