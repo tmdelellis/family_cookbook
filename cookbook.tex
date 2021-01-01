@@ -44,10 +44,9 @@
     %%
     \clearpage
     \thispagestyle{plain}
-    \phantom{x}
-    \vfill
+    \vspace*{\fill}
     \section{#2}
-    \vfill
+    \vspace*{\fill}
 }
 
 %\newcommand{\protip}[1]
@@ -142,20 +141,23 @@
 %% Title page
 \begin{titlepage}
 \vspace*{1.5in}
-\begin{center}
-\begin{Huge}
-\vspace{2\baselineskip}
-{\bf The Extended Family Cookbook}\\
-\end{Huge}
-\begin{huge}
-\vspace{\baselineskip}
-({\bf Now with Soup!})\\
-\end{huge}
-\begin{LARGE}
-\vspace{3\baselineskip}
-Second Edition!
-\end{LARGE}
-\end{center}
+\begin{tcolorbox}%
+    [title=The Extended Family Cookbook,%
+    center title,%
+    fonttitle=\Huge\bfseries,%
+    fontupper=\LARGE\bfseries,%
+    fontlower=\Large\bfseries,%
+    center upper,%
+    lower separated=false,%
+    center lower,%
+    boxsep=3mm,%
+    top=2\baselineskip,%
+    middle=2\baselineskip,%
+    center]
+    (Now with Soup!)
+    \tcblower
+    Second Edition
+\end{tcolorbox}
 \end{titlepage}
 
 %% Copyright page
