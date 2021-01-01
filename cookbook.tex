@@ -15,6 +15,13 @@
 \usepackage{fancyhdr}
 \usepackage[breakable,many,minted]{tcolorbox}
 
+%% Font stuff
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%% Using Bookman font
+\usepackage{bookman}
+
 %% Local packages
 \usepackage{tmecolors}
 
@@ -247,7 +254,7 @@ Tom and Kate Evans\\ Knoxville 2020
         anchor=west,
         text width=\textwidth,
         ] {{\Large The Extended Family Cookbook}\\\vspace{0.5\baselineskip}
-        \thesection\hspace{.5em}\hangindent\wd0\strut\uppercase{#1}\strut};
+        \thesection\hspace{.5em}\hangindent\wd0\strut{#1}\strut};
     \end{tikzpicture}%
   }
 
