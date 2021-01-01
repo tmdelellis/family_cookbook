@@ -11,11 +11,19 @@
 \usepackage{tocloft}
 \usepackage{xspace}
 \usepackage{color}
-\usepackage{titlesec}
+\usepackage[explicit]{titlesec}
+\usepackage{fancyhdr}
 \usepackage[breakable,many,minted]{tcolorbox}
+
+%% Local packages
+\usepackage{tmecolors}
 
 %%---------------------------------------------------------------------------%%
 %% >>> STYLE DEFINITIONS
+
+%% Default colors for tcolorbox
+\colorlet{TCBDefaultBack}{black!5!white}
+\colorlet{TCBDefaultFrame}{black!75!white}
 
 %% Index
 \makeindex
@@ -33,11 +41,11 @@
 
 \newcommand{\secpart}[2]
 {
+    %%
     \clearpage
     \thispagestyle{plain}
     \phantom{x}
     \vfill
-    {\noindent\Large#1}
     \section{#2}
     \vfill
 }
@@ -129,7 +137,7 @@
 
 %%---------------------------------------------------------------------------%%
 %% >>> FRONT MATTER
-\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}[]
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{#1}[]
 
 %% Title page
 \begin{titlepage}
@@ -152,17 +160,17 @@ Second Edition!
 
 %% Copyright page
 \vspace*{\fill}
-Copyright\,\copyright\, 1996, 2020 Tom and Kate Publishing People, Inc.
-This document was prepared using the \LaTeX\ typesetting language.
-Edited and compiled by Tom and Kate Evans.
-%Tom and Kate Publishing People, Inc.
-First Edition printed on 12-20-96, with recipes received between 9-95 and
-12-96.
-Second Edition released Dec 31, 2020.
-May not be reprinted without permission (just kidding, go crazy! Just speak well of us.).
+Copyright\,\copyright\, 1996, 2020 Tom and Kate Publishing People, Inc. This
+document was prepared using the \LaTeX\ typesetting language. Edited and
+compiled by Tom and Kate Evans. First Edition printed on 12-20-96, with recipes
+received between 9-95 and 12-96. Second Edition released Dec 31, 2020. May not
+be reprinted without permission (just kidding, go crazy! Just speak well of
+us.).
 
 \vspace{1\baselineskip}
-We are not responsible for any bad recipes. Please send corrections to Tom and Kate, 11112 Windward Dr, Knoxville, TN 37934 or email \href{mailto:ktloo@tds.net}{ktloo@tds.net}.
+We are not responsible for any bad recipes. Please send corrections to Tom and
+Kate, 11112 Windward Dr, Knoxville, TN 37934 or email
+\href{mailto:ktloo@tds.net}{ktloo@tds.net}.
 \pagebreak
 
 %% TOC
@@ -214,13 +222,32 @@ Tom and Kate Evans\\ Knoxville 2020
 
 %%---------------------------------------------------------------------------%%
 %% >>> MAIN DOCUMENT
-\titleformat{name=\section}%
-    {\Huge\bfseries\uppercase}%
-    {\thesection}%
-    {1em}%
-    {}%
-    [\titlerule]
-%
+%\titleformat{name=\section}%
+%    {\Huge\bfseries\uppercase}%
+%    {\thesection}%
+%    {1em}%
+%    {%
+%        #1
+%    }%
+%    [\titlerule]
+%%
+
+\titleformat{\section}
+  {\Huge\bfseries}{}{0em}
+  {%
+    \setbox0=\hbox{\Huge\bfseries\thesection}%
+    \begin{tikzpicture}
+        %\draw[orange, ultra thick](0,0) -- ++(0:\linewidth);
+        \node[draw=black,
+        rounded corners,
+        fill=TCBDefaultBack,
+        ultra thick,
+        anchor=west,
+        text width=\textwidth,
+        ] {{\Large The Extended Family Cookbook}\\\vspace{0.5\baselineskip}
+        \thesection\hspace{.5em}\hangindent\wd0\strut\uppercase{#1}\strut};
+    \end{tikzpicture}%
+  }
 
 %\part{Recipes from the Second Edition}
 \input{second-salads}
@@ -240,7 +267,7 @@ Tom and Kate Evans\\ Knoxville 2020
 %%---------------------------------------------------------------------------%%
 %% >>> APPENDIX
 \appendix
-\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{#1}
 \newpage
 
 \section{Family Information}
