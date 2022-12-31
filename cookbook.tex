@@ -147,6 +147,7 @@
 \DeclareSIUnit\quart{qt}
 \DeclareSIUnit\inch{$''$}
 \DeclareSIUnit\degreeF{\degree F}
+\DeclareSIUnit\mill{\ml}
 
 \hypersetup{
     linkcolor=[rgb]{0.18,0.31,0.31},
@@ -191,16 +192,14 @@
 
 %% Copyright page
 \vspace*{\fill}
-Copyright\,\copyright\, 1996, 2020 Tom and Kate Publishing People, Inc. This
+Copyright\,\copyright\, 1996, 2022 Tom and Kate Publishing People, Inc. This
 document was prepared using the \LaTeX\ typesetting language. Edited and
 compiled by Tom and Kate Evans. First Edition printed on 12-20-96, with recipes
-received between 9-95 and 12-96. Second Edition released Dec 31, 2020. May not
-be reprinted without permission (just kidding, go crazy! Just speak well of
+received between 9-95 and 12-96. Second Edition released 2-1-22, with recipes collected during the pandemic, summer 2020 to January 2022. May not be reprinted without permission (just kidding, go crazy! Just speak well of
 us.).
 
 \vspace{1\baselineskip}
-We are not responsible for any bad recipes. Please send corrections to Tom and
-Kate, 11112 Windward Dr, Knoxville, TN 37934 or email
+We are not responsible for terrible recipes; your poison is another's delicacy, so keep it to yourself. That said, please send corrections to Tom \href{mailto:ktloo@tds.net}{tmdelellis@tds.net} or Kate
 \href{mailto:ktloo@tds.net}{ktloo@tds.net}.
 \pagebreak
 
@@ -215,20 +214,15 @@ Kate, 11112 Windward Dr, Knoxville, TN 37934 or email
 \addcontentsline{toc}{section}{Forward}
 \section*{Foreword}
 
-{\color{red}
+%{\color{red}
+\textbf{From the first edition: }
 Finally, we know all of you have been holding your breath this last year
 in anticipation of the release of the Family Cookbook.  Well Ma'
 Flanders, you can rest at ease, because IT is here.  We hope everyone
-enjoys each others contributions.  Kate and Tom had a good time putting it
-together, well that isn't entirely true.  Let's say we enjoyed the
+enjoys each others' contributions.  We had a good time putting it
+together -- well that isn't entirely true.  Let's say we enjoyed the
 THOUGHT of doing it, and, of course, now that the deed is done we are
 very happy with the results.
-
-Now that we have a `base' manuscript from which to work, inclusions will
-be welcome.  We foresee that many editions of the family cookbook could
-grace the bookshelves, cabinets, and, in some cases, trash cans of our
-once and future homes.  Keep the recipes and corrections comin' and we'll
-eventually work them in two the second edition due out in April, 2034.
 
 Illustrations in the cookbook are meant to spice things up. Both Kate and
 Tom contributed artwork.  We hope you think that they are moderately
@@ -239,16 +233,19 @@ picture of so-and-so or `That's a horrible picture of me to present to
 the whole family!'  Frankly, we didn't want to deal with the possibility
 of such horrors, so, artwork it was.
 
-Well, that's all our comments for now as we are tired of doing this and
+
+\textbf{The second edition:}
+Wow the technology of creating a book have sure changed since we created the first edition. And thank goodness!
+This edition is a `base' manuscript from which to work, but in theory we could include more submissions when you send them. In reality,  this utopia where many editions of the family cookbook could grace the bookshelves, cabinets, and, in some cases, trash cans of our once and future homes is limited by our time and motivation to enter them. Seriously though, this does mean that corrections can be added at any time and you can grab the latest pdf whenever you want to cook something. And of course, you are welcome to keep the recipes comin' and we'll eventually work them into the third edition, due out in April, 2034.
+
+This time it was easy to add pictures as well as artwork, so that adds a nice touch, that to all who provided some visual interest along with the recipes! Well, that's all our comments for now as we are tired of doing this and
 have no energy left to write, format, or look at this in general.  Please
-try the recipes and let us and others know which are keepers (hopefully
-all) and which need modification.  May all enjoy and we look forward to
-hearing from all of you  in the near future!  Happy Holidays!
-}
+try the recipes and let the authors know if you enjoyed them. Sending our love and wishes for some good home cooking!  
+%}
 
 \vspace{.5in}
 \begin{flushright}
-Tom and Kate Evans\\ Knoxville 2020
+Tom and Kate Evans\\ Knoxville 2022
 \end{flushright}
 
 %%---------------------------------------------------------------------------%%
@@ -298,47 +295,57 @@ Tom and Kate Evans\\ Knoxville 2020
 
 \subsection{List of Contributors}
 
+In the last cookbook we added family trees at the end so that everyone could see how folks are connected across families, but we were afraid to do this time as its too easy to misspell, omit, etc. You would not believe the existential questions we pursued. For example, do we include the now passed on relatives in the tree, or only if we reference them in a recipe? Do we use the traditional maiden names often used in trees, or current names? Proper names or commmon? What are the chances we will swap them inadvertently (high).  Instead we provide you with a list of contributors of recipes, and their relationship to us, the authors and we used the name they gave us when sending the recipe. If made a mistake, we apologize!
+
+
+
 \begin{enumerate}
- \color{red}
  \itemsep0pt
  \parskip1pt
-\item Betsy and Richard Cordova %\textit{411 Arrowhead Trail, Sinking Spring PA  19608}.
-\item Angelo and Evelina DeLellis
-\item George, Sr. and Mickey Evans
-\item Fermina and George Evans % \textit{411 Arrowhead Trail, Sinking Spring PA, 19608.}
-\item Katie Evans
-\item Steve and Joyce Evans
-\item Scott Evans
-\item Tom and Kate Evans %\textit{11112 Windward Dr, Knoxville, TN 37934}.
-\item Amelia DeLellis
-\item Lauren Anton
-\item Paul and Mimi Horne %\textit{28 ave. R Poincar\'{e}, 75116 Paris, France}.
-\item Rich and Jenn King.
-\item Don and Lil Johnson
-\item Donald and Geyi Johnson
-\item David and Dottie Lindquist
+\item Betsy Cordova, Tom's eldest younger sister %\textit{411 Arrowhead Trail, Sinking Spring PA  19608}.
+\item Evelina DeLellis, Tom's maternal grandmother
+\item George, Sr. and Mickey Evans, Tom's paternal grandparents
+\item Fermina Evans, Tom's mother % \textit{411 Arrowhead Trail, Sinking Spring PA, 19608.}
+\item Martha Johnson, Kate's mother
+\item Katie Evans Pross, Tom's youngest younger sister
+\item Joyce Evans, Tom's Aunt on his father's side
+\item Scott Evans, Tom's cousin, on his father's side
+\item Tom and Kate Evans, yours truly %\textit{11112 Windward Dr, Knoxville, TN 37934}.
+\item Amy DeLellis, Tom's aunt on his mother's side
+\item Lauren Anton, Tom's cousin on his mother's side
+\item Paul and Mimi Horne, Kate's uncle and aunt on her mother's side %\textit{28 ave. R Poincar\'{e}, 75116 Paris, France}.
+\item Rich, Jenn, and Julian King, Kate's cousin on her mother's side, her husband and firstborn (the other Kings arrived after the 1996 edition when it came out)
+\item Lillian ``Lil'' Johnson, Kate's paternal grandmother 
+\item Don Johnson and Geyi Liu, Kate's brother and his wife
+\item Liz Johnson, Kate's niece 
+\item David and Dotty Lindquist, David Lindquist, Kate's cousin on her mother's side, and his wife
+\item Louise ``Weedie'' Johnson, Kate's aunt on her father's side
+\item Martha Hodgkins Niepold Lamb, Kate's maternal grandmother
+\item Jen Tidey, mother of Eva and Axel Lindquist, Kate's niece and nephew
+\item Horne Rona, Alison, Kate's cousin on her mother's side
+\item Lindquist, Julie, Kate aunt on her father's side
+\item Lindquist, Jenn, wife of Steven Lindquist, Kate's cousin on her father's side
+
 \end{enumerate}
 
-\subsection{Family Trees}
+%\subsection{Family Trees}
 
-{\color{red}
-We realized while writing this recipe book that many of you don't know people from either Tom's or Kate's extended families.  To resolve this Tom proposed a biblical-style section, ie. Donald begot Dodge who was the Father of Kate...  Kate, on the other hand hated that format, and, for once, Tom agreed.  Therefore, we settled on family trees because they remind Tom of Feynman Diagrams and because Kate thinks they look like something having to do with weather.  Anyway, these are meant for people from one side of the hill to see who is related to who on the other side.
-They are not conclusive and only reflect the situation as it is now.
-}
+%We realized while writing this recipe book that many of you don't know people from either Tom's or Kate's extended families.  To resolve this Tom proposed a biblical-style section, ie. Donald begot Dodge who was the Father of Kate...  Kate, on the other hand hated that format, and, for once, Tom agreed.  Therefore, we settled on family trees because they remind Tom of Feynman Diagrams and because Kate thinks they look like something having to do with weather.  Anyway, these are meant for people from one side of the hill to see who is related to who on the other side. They are not conclusive and only reflect the situation as it is now.
+%}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=.9\textwidth,clip]{figures/Johnson-Tree.pdf}
-    \caption{Johnson Family Tree.}
-    \label{fig:johnson-tree}
-\end{figure}
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=.9\textwidth,clip]{figures/Johnson-Tree.pdf}
+%    \caption{Johnson Family Tree.}
+%    \label{fig:johnson-tree}
+%\end{figure}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=.9\textwidth,clip]{figures/DeLellis-Tree.pdf}
-    \caption{DeLellis Family Tree.}
-    \label{fig:delellis-tree}
-\end{figure}
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=.9\textwidth,clip]{figures/DeLellis-Tree.pdf}
+%    \caption{DeLellis Family Tree.}
+%    \label{fig:delellis-tree}
+%\end{figure}
 
 %%---------------------------------------------------------------------------%%
 %% >>> BACKMATTER
